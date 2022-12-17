@@ -27,7 +27,7 @@ jobs:
 
     - name: Analyse the code with pylint
       run: |
-        poetry run pylint ms --fail-under 9
+        poetry run pylint python_ms --fail-under 9
 
     - name: Analyse the automated tests with pylint
       run: |
