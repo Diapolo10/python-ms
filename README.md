@@ -1,3 +1,3 @@
-# python-poetry-template
+# Python-ms
 
-A template Poetry project structure.
+A Python equivalent to the JavaScript ms package.
