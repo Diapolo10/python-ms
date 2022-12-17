@@ -25,7 +25,7 @@ __init__.py:F401,F403,F405\
 
 
 [tool.poetry]
-name = 'python-ms'
+name = 'python_ms'
 version = '0.1.0'
 description = "A Python equivalent to the JavaScript ms package."
 
