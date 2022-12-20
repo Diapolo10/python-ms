@@ -26,7 +26,7 @@ __init__.py:F401,F403,F405\
 
 [tool.poetry]
 name = 'python_ms'
-version = '0.9.0'
+version = '1.0.0'
 description = "A Python equivalent to the JavaScript ms package."
 
 authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
@@ -113,6 +113,8 @@ isolated_build = True
 [gh-actions]
 python =
     3.10: py310
+    3.11: py311
+    3.12: py312
     pypy-3.10: pypy3
 
 [gh-actions:env]
