@@ -50,23 +50,57 @@ Lorem Ipsum dolor sit amet.
 <!--
 _______________________________________________________________________________
 
-## [0.1.1] - YYYY-MM-DD
+## [0.9.0] - 2022-12-20
 
-In-progress update goes here.
+This update adds all planned fuctionality for the project.
+Strings are parsed into integers, and vice versa.
 
 ### Added
 
-- Stuff
+- String to int conversion for microseconds
+- Int to string conversion for microseconds
+- Added more GitHub Actions workflows for PyPI uploads
+- Full unit test coverage
 
 ### Changed
 
+- Moved constants to their own file
+- Updated linters and cleaned up the codebase
 - Updated localisation files
+
+### Fixed
+
+- Fixed a bug with the regex query
 
 -->
 
 _______________________________________________________________________________
 
-## [0.1.0] - YYYY-MM-DD
+## [0.9.0] - 2022-12-20
+
+This update adds all planned fuctionality for the project.
+Strings are parsed into integers, and vice versa.
+
+### Added
+
+- String to int conversion for microseconds
+- Int to string conversion for microseconds
+- Added more GitHub Actions workflows for PyPI uploads
+- Full unit test coverage
+
+### Changed
+
+- Moved constants to their own file
+- Updated linters and cleaned up the codebase
+- Updated localisation files
+
+### Fixed
+
+- Fixed a bug with the regex query
+
+_______________________________________________________________________________
+
+## [0.1.0] - 2022-12-17
 
 This is the initial version of the project.
 

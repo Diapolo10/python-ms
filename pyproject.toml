@@ -26,7 +26,7 @@ __init__.py:F401,F403,F405\
 
 [tool.poetry]
 name = 'python_ms'
-version = '0.1.0'
+version = '0.9.0'
 description = "A Python equivalent to the JavaScript ms package."
 
 authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
@@ -44,12 +44,17 @@ keywords = [
     'python3',
 ]
 classifiers = [
-    'Development Status :: 3 - Alpha',
+    'Development Status :: 4 - Beta',
+    'Intended Audience :: Developers',
     'License :: OSI Approved :: MIT License',
+    'Natural Language :: English',
     'Operating System :: OS Independent',
     'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
     'Programming Language :: Python :: Implementation :: CPython',
     'Programming Language :: Python :: Implementation :: PyPy',
+    'Topic :: Software Development :: Libraries',
     'Typing :: Typed',
 ]
 
@@ -62,11 +67,11 @@ python = "^3.10"
 coverage = {version = '^6.5.0', extras = ['toml',]}
 flake8 = '^6.0.0'
 mypy = '^0.991'
-pylint = '^2.15.8'
-pyproject-flake8 = '^6.0.0.post1'
+pylint = '^2.15.9'
+pyproject-flake8 = '^6.0.0'
 pytest = '^7.2.0'
 pytest-cov = '^4.0.0'
-tox = '^3.27.1'
+tox = '^3.28.0'
 tox-gh-actions = '^2.12.0'
 
 
@@ -80,6 +85,7 @@ tox-gh-actions = '^2.12.0'
 max-line-length = 120
 disable = [
     # https://vald-phoenix.github.io/pylint-errors/
+    'E1102',  # ms is not callable (not-callable)
 ]
 
 
