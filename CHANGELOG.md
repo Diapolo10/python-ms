@@ -50,25 +50,49 @@ Lorem Ipsum dolor sit amet.
 <!--
 _______________________________________________________________________________
 
-## [1.0.0] - 2022-12-20
+## [1.0.1] - 2022-12-20
 
-This update fixes a handful of things, readying the package for official
-release.
+A bunch of small fixes.
 
 ### Added
 
-- Badges to `README.md`
+- Added keywords to PyPI
 
 ### Changed
 
-- Updated GitHub Actions workflows to use newer versions
+- Updated development status to stable
 
 ### Fixed
 
-- Swapped `Ellipsis` for `pass` in the hopes of getting coverage reports ignore
-  them
+- Fixed `Makefile`
+
+### Removed
+
+- The source code link was unnecessary
 
 -->
+
+_______________________________________________________________________________
+
+## [1.0.1] - 2022-12-20
+
+A bunch of small fixes.
+
+### Added
+
+- Added keywords to PyPI
+
+### Changed
+
+- Updated development status to stable
+
+### Fixed
+
+- Fixed `Makefile`
+
+### Removed
+
+- The source code link was unnecessary
 
 _______________________________________________________________________________
 
