@@ -50,29 +50,45 @@ Lorem Ipsum dolor sit amet.
 <!--
 _______________________________________________________________________________
 
-## [0.9.0] - 2022-12-20
+## [1.0.0] - 2022-12-20
 
-This update adds all planned fuctionality for the project.
-Strings are parsed into integers, and vice versa.
+This update fixes a handful of things, readying the package for official
+release.
 
 ### Added
 
-- String to int conversion for microseconds
-- Int to string conversion for microseconds
-- Added more GitHub Actions workflows for PyPI uploads
-- Full unit test coverage
+- Badges to `README.md`
 
 ### Changed
 
-- Moved constants to their own file
-- Updated linters and cleaned up the codebase
-- Updated localisation files
+- Updated GitHub Actions workflows to use newer versions
 
 ### Fixed
 
-- Fixed a bug with the regex query
+- Swapped `Ellipsis` for `pass` in the hopes of getting coverage reports ignore
+  them
 
 -->
+
+_______________________________________________________________________________
+
+## [1.0.0] - 2022-12-20
+
+This update fixes a handful of things, readying the package for official
+release.
+
+### Added
+
+- Badges to `README.md`
+
+### Changed
+
+- Updated GitHub Actions workflows to use newer versions
+
+### Fixed
+
+- Swapped `Ellipsis` for `pass` in the hopes of getting coverage reports ignore
+  them
 
 _______________________________________________________________________________
 
