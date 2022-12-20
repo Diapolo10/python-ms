@@ -41,7 +41,9 @@ repository = 'https://github.com/Diapolo10/python-ms'
 documentation = 'https://github.com/Diapolo10/python-ms/tree/main/docs'
 
 keywords = [
+    'package',
     'python3',
+    'time',
 ]
 classifiers = [
     'Development Status :: 4 - Beta',
