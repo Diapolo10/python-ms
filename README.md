@@ -10,6 +10,13 @@ floating-point numbers when using large values.
 Using the project's unit tests as examples is recommended, as they cover
 everything.
 
+|              |   |
+|--------------|---|
+| Tests (main) | [![codecov](https://codecov.io/gh/Diapolo10/python-ms/branch/main/graph/badge.svg?token=zBlgCd32Aq)](https://codecov.io/gh/Diapolo10/python-ms) ![Unit tests](https://github.com/diapolo10/python-ms/workflows/Unit%20tests/badge.svg) ![Pylint](https://github.com/diapolo10/python-ms/workflows/Pylint/badge.svg) ![Flake8](https://github.com/diapolo10/python-ms/workflows/Flake8/badge.svg) |
+| Activity     | ![GitHub contributors](https://img.shields.io/github/contributors/diapolo10/python-ms) ![Last commit](https://img.shields.io/github/last-commit/diapolo10/python-ms?logo=github) ![GitHub all releases](https://img.shields.io/github/downloads/diapolo10/python-ms/total?logo=github) ![GitHub issues](https://img.shields.io/github/issues/diapolo10/python-ms) ![GitHub closed issues](https://img.shields.io/github/issues-closed/diapolo10/python-ms) ![GitHub pull requests](https://img.shields.io/github/issues-pr/diapolo10/python-ms) ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/diapolo10/python-ms) |
+| QA           | [![CodeFactor](https://www.codefactor.io/repository/github/diapolo10/python-ms/badge?logo=codefactor)](https://www.codefactor.io/repository/github/diapolo10/python-ms) |
+| Other        | [![License](https://img.shields.io/github/license/diapolo10/python-ms)](https://opensource.org/licenses/MIT) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDiapolo10%2Fpython-ms.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FDiapolo10%2Fpython-ms?ref=badge_shield) [![Known Vulnerabilities](https://snyk.io/test/github/diapolo10/python-ms/badge.svg)](https://snyk.io/test/github/diapolo10/python-ms) ![Repository size](https://img.shields.io/github/repo-size/diapolo10/python-ms?logo=github) ![Code size](https://img.shields.io/github/languages/code-size/diapolo10/python-ms?logo=github) ![Lines of code](https://img.shields.io/tokei/lines/github/diapolo10/python-ms?logo=github) |
+
 ## Installation
 
 The project is available via PyPI:

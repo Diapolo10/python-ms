@@ -174,11 +174,11 @@ class _ms(types.ModuleType):
 
     @overload
     def __call__(self, value: str, long: bool) -> int:
-        ...
+        pass
 
     @overload
     def __call__(self, value: int, long: bool) -> str:
-        ...
+        pass
 
     def __call__(self, value: str | int, long: bool = False) -> int | str:
         if isinstance(value, str):
