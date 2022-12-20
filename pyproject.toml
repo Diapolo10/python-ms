@@ -26,7 +26,7 @@ __init__.py:F401,F403,F405\
 
 [tool.poetry]
 name = 'python_ms'
-version = '1.0.0'
+version = '1.0.1'
 description = "A Python equivalent to the JavaScript ms package."
 
 authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
@@ -41,10 +41,12 @@ repository = 'https://github.com/Diapolo10/python-ms'
 documentation = 'https://github.com/Diapolo10/python-ms/tree/main/docs'
 
 keywords = [
+    'package',
     'python3',
+    'time',
 ]
 classifiers = [
-    'Development Status :: 4 - Beta',
+    'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: MIT License',
     'Natural Language :: English',
@@ -60,7 +62,7 @@ classifiers = [
 
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = '^3.10'
 
 
 [tool.poetry.dev-dependencies]
@@ -76,7 +78,6 @@ tox-gh-actions = '^2.12.0'
 
 
 [tool.poetry.urls]
-"Source code" = 'https://github.com/Diapolo10/python-ms'
 "Tracker" = 'https://github.com/Diapolo10/python-ms/issues'
 "Changelog" = 'https://github.com/Diapolo10/python-ms/blob/main/CHANGELOG.md'
 
