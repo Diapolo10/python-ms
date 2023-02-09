@@ -12,22 +12,23 @@ different bugs. Otherwise, make another issue.
 
 To suggest a new feature:
 
-* For small suggestions, [you can go directly to the Projects tab][Projects]
+- For small suggestions, [you can go directly to the Projects tab][Projects]
   and write a suggestion to the Suggestions/Ideas column
-* For medium-to-large suggestions, write an issue, mark it as part of the
+- For medium-to-large suggestions, write an issue, mark it as part of the
   current project and label it as a suggestion
 
 You may NOT suggest features through email to the core developers.
 
 ## Setting up your development environment
 
-Since `python-ms` has very little to do beyond programming and testing, the following should be enough for 95% of all contributors:
+Since `python-ms` has very little to do beyond programming and testing,
+the following should be enough for 95% of all contributors:
 
 1. A working Git or GitHub Desktop installation
 2. A text editor / Python IDE
 3. An installation of Python that supports Python version 3.10 or higher
 4. The following, non-standard PyPI modules (available through pip):
-    * `poetry`
+    - `poetry`
 
 [Issues]: https://github.com/Diapolo10/python-ms/issues
 [Projects]: https://github.com/Diapolo10/python-ms/projects
