@@ -50,27 +50,49 @@ Lorem Ipsum dolor sit amet.
 <!--
 _______________________________________________________________________________
 
-## [1.0.1] - 2022-12-20
+## [1.0.2] - 2023-02-09
 
-A bunch of small fixes.
+Updated dependencies, metadata files, and GitHub Actions workflows.
 
 ### Added
 
-- Added keywords to PyPI
+- Added automated GitHub release builds
+- Added Dependabot auto-updates
+- Added `CODEOWNERS`
 
 ### Changed
 
-- Updated development status to stable
+- Updated wording from American English to British English, because we have
+  our dignity
+- Releases are now made from tags instead of merges
 
 ### Fixed
 
-- Fixed `Makefile`
-
-### Removed
-
-- The source code link was unnecessary
+- Fixed a broken coverage option
 
 -->
+
+_______________________________________________________________________________
+
+## [1.0.2] - 2023-02-09
+
+Updated dependencies, metadata files, and GitHub Actions workflows.
+
+### Added
+
+- Added automated GitHub release builds
+- Added Dependabot auto-updates
+- Added `CODEOWNERS`
+
+### Changed
+
+- Updated wording from American English to British English, because we have
+  our dignity
+- Releases are now made from tags instead of merges
+
+### Fixed
+
+- Fixed a broken coverage option
 
 _______________________________________________________________________________
 

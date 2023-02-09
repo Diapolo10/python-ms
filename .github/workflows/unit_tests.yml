@@ -42,7 +42,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - name: Install Poetry
-      uses: Gr1N/setup-poetry@v7
+      uses: Gr1N/setup-poetry@v8
 
     - name: Install library and dependencies
       run: |
@@ -65,7 +65,6 @@ jobs:
         files: ./tests/reports/coverage-html/index.html,./tests/reports/coverage.xml
         flags: unittests
         name: ${{ matrix.os }}-${{ matrix.tox-env }}
-        path_to_write_report: ./tests/reports/codecov_report.txt
         token: ${{ secrets.CODECOV_TOKEN }}
 
 
@@ -78,7 +77,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Publish distribution 📦 to Test PyPI
-      uses: JRubics/poetry-publish@v1.15
+      uses: JRubics/poetry-publish@v1.16
       continue-on-error: true
       with:
         ignore_dev_requirements: 'yes'
