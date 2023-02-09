@@ -75,8 +75,9 @@ jobs:
 
       - name: Get Newest Changelog
         run: |
+          python -c "from pathlib import Path; print((Path.cwd() / 'CHANGELOG.md').exists()))"
           python -c "from pathlib import Path; print(list(Path.cwd().iterdir()))"
-          python -c "import re; from pathlib import Path; text=re.sub('<!--(.*?)-->', '', (Path.cwd().parent / 'CHANGELOG.md').read_text(), flags=re.DOTALL); start=text.find('_' * 79); (Path.cwd() / 'TEMP_CHANGELOG.md').write_text(text[start:text.find('_' * 79, start+1)])"
+          python -c "import re; from pathlib import Path; text=re.sub('<!--(.*?)-->', '', (Path.cwd() / 'CHANGELOG.md').read_text(), flags=re.DOTALL); start=text.find('_' * 79); (Path.cwd() / 'TEMP_CHANGELOG.md').write_text(text[start:text.find('_' * 79, start+1)])"
 
       - name: Create Release
         id: create_release
