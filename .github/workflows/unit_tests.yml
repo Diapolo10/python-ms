@@ -22,11 +22,12 @@ jobs:
         ]
         include:
           - tox-env: py310
-            python-version: "3.10"
+            python-version: '3.10'
           - tox-env: py311
-            python-version: "3.11"
+            python-version: '3.11'
           # - tox-env: py312
-          #   python-version: "3.12"
+          #   python-version: '3.12'
+
         exclude:
           - os: macos-latest
             tox-env: py311
@@ -34,7 +35,9 @@ jobs:
       TOXENV: ${{ matrix.tox-env }}
 
     steps:
-    - uses: actions/checkout@v3
+
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
@@ -48,7 +51,6 @@ jobs:
       run: |
         poetry run pip install --upgrade pip setuptools
         poetry install
-        poetry run pip install tox-gh-actions
 
     - name: Run Tox (Pytest + Coverage)
       run: |
@@ -72,9 +74,10 @@ jobs:
     name: Build and publish Python 🐍 distributions 📦 to TestPyPI
     runs-on: ubuntu-latest
     needs: test
-
     steps:
-    - uses: actions/checkout@v3
+
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
     - name: Publish distribution 📦 to Test PyPI
       uses: JRubics/poetry-publish@v1.16
