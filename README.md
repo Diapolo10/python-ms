@@ -83,7 +83,7 @@ ms(ms('10 hours'), long=True)  # "10 hours"
 ## Caught a Bug?
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
-2. Install `poetry` (if it isn't alreeady installed)
+2. Install `poetry` (if it isn't already installed)
 3. Run `poetry install` in the project directory. This fetches development dependencies like `pytest` and sets up everything for you to start debugging
 
 As always, you can run the tests using: `poetry run pytest`
