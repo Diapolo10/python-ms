@@ -27,10 +27,6 @@ jobs:
             python-version: '3.11'
           # - tox-env: py312
           #   python-version: '3.12'
-
-        exclude:
-          - os: macos-latest
-            tox-env: py311
     env:
       TOXENV: ${{ matrix.tox-env }}
 
