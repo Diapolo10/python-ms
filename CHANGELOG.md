@@ -50,27 +50,49 @@ Lorem Ipsum dolor sit amet.
 <!--
 _______________________________________________________________________________
 
-## [1.0.2] - 2023-02-09
+## [1.1.0] - 2023-05-29
 
-Updated dependencies, metadata files, and GitHub Actions workflows.
-
-### Added
-
-- Added automated GitHub release builds
-- Added Dependabot auto-updates
-- Added `CODEOWNERS`
+Fixed a potential catastrophic backtracking vulnerability with a regular
+expression used to parse strings in the package.
 
 ### Changed
 
-- Updated wording from American English to British English, because we have
-  our dignity
-- Releases are now made from tags instead of merges
+- Updated dependencies
+- Replaced Pylint and Flake8 with Ruff
 
 ### Fixed
 
-- Fixed a broken coverage option
+- Fixed miscellaneous linting issues
+
+### Security
+
+- A regular expression used to parse strings was found to have a potential
+  catastrophic backtracking vulnerability; this was fixed by replacing the
+  regex with a non-vulnerable variant
 
 -->
+
+_______________________________________________________________________________
+
+## [1.1.0] - 2023-05-29
+
+Fixed a potential catastrophic backtracking vulnerability with a regular
+expression used to parse strings in the package.
+
+### Changed
+
+- Updated dependencies
+- Replaced Pylint and Flake8 with Ruff
+
+### Fixed
+
+- Fixed miscellaneous linting issues
+
+### Security
+
+- A regular expression used to parse strings was found to have a potential
+  catastrophic backtracking vulnerability; this was fixed by replacing the
+  regex with a non-vulnerable variant
 
 _______________________________________________________________________________
 
