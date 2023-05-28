@@ -3,7 +3,6 @@
 import random
 import re
 
-
 # Basic units of time
 
 MILLISECOND = 1
@@ -36,7 +35,6 @@ MILLENIUM = 10 * CENTURY
 
 # https://en.wikipedia.org/wiki/List_of_humorous_units_of_measurement#Time
 JIFFY = random.randint(1, 10) * MILLISECOND
-# SHAKE = 10 * NANOSECOND
 MILLIDAY = DAY // 1000
 MICROCENTURY = 52 * MINUTE + 35 * SECOND + 700 * MILLISECOND
 NANOCENTURY = MICROCENTURY // 1000
@@ -53,4 +51,4 @@ AEON = 10**3 * MEGAANNUM
 
 # Regular expressions
 
-TIME_REGEX = re.compile(r'^([+-]?\d*\.?\d*)\s?([a-zA-Z-]*)$')
+TIME_REGEX = re.compile(r'^([+-]?\d+(?:\.\d*)?|\.\d+)\s?([a-zA-Z-]*)$')

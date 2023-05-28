@@ -2,7 +2,6 @@
 
 import pytest
 
-# from python_ms.ms import _ms as ms
 import python_ms as ms
 from python_ms.config import MILLISECOND
 
@@ -63,34 +62,34 @@ def test_ms_string_integer_input_esoteric():
 def test_ms_string_float_input():
     """Tests that the ms class works correctly with text input with floats"""
 
-    assert 9_000_000 == ms('2.5 hrs')
-    assert 7_920_000 == ms('2.2 hrs')
-    assert 360_000 == ms('.1 hrs')
-    assert 3_600_000 == ms('1. hrs')
+    assert ms('2.5 hrs') == 9_000_000
+    assert ms('2.2 hrs') == 7_920_000
+    assert ms('.1 hrs') == 360_000
+    assert ms('1. hrs') == 3_600_000
 
 
 def test_ms_int_input():
     """Tests that the ms class works correctly with integer input"""
 
-    assert '1m' == ms(60_000)
-    assert '2m' == ms(2 * 60_000)
-    assert '-3m' == ms(-3 * 60_000)
-    assert '10h' == ms(ms('10 hours'))
-    assert '1s' == ms(ms('1 second'))
-    assert '1d' == ms(ms('25 hours'))
+    assert ms(60_000) == '1m'
+    assert ms(2 * 60_000) == '2m'
+    assert ms(-3 * 60_000) == '-3m'
+    assert ms(ms('10 hours')) == '10h'
+    assert ms(ms('1 second')) == '1s'
+    assert ms(ms('25 hours')) == '1d'
 
 
 def test_ms_int_input_long():
     """Tests that the ms class works correctly with integer input when asking long output"""
 
-    assert "1 minute" == ms(60_000, long=True)
-    assert "2 minutes" == ms(2 * 60_000, long=True)
-    assert "-3 minutes" == ms(-3 * 60000, long=True)
-    assert "10 hours" == ms(ms('10 hours'), long=True)
-    assert "1 day" == ms(ms('25 hours'), long=True)
-    assert "5 seconds" == ms(5_000, long=True)
-    assert "5 seconds" == ms(ms('5s'), long=True)
-    assert "420 milliseconds" == ms(420, long=True)
+    assert ms(60_000, long=True) == "1 minute"
+    assert ms(2 * 60_000, long=True) == "2 minutes"
+    assert ms(-3 * 60000, long=True) == "-3 minutes"
+    assert ms(ms('10 hours'), long=True) == "10 hours"
+    assert ms(ms('25 hours'), long=True) == "1 day"
+    assert ms(5_000, long=True) == "5 seconds"
+    assert ms(ms('5s'), long=True) == "5 seconds"
+    assert ms(420, long=True) == "420 milliseconds"
 
 
 def test_ms_unsupported_input():
