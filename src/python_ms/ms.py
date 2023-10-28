@@ -1,4 +1,4 @@
-"""Python equivalent of the JavaScript ms package"""
+"""Python equivalent of the JavaScript ms package."""
 
 from __future__ import annotations
 
@@ -10,11 +10,10 @@ import python_ms.config as cfg
 
 def common_unit_conversion(unit: str) -> int:
     """
-    Returns a suitable multiplier from milliseconds to the desired unit
+    Return a suitable multiplier from milliseconds to the desired unit.
 
     Raises ValueError if no suitable conversion is found.
     """
-
     result = None
 
     match (unit):
@@ -42,11 +41,10 @@ def common_unit_conversion(unit: str) -> int:
 
 def uncommon_unit_conversion(unit: str) -> int:
     """
-    Returns a suitable multiplier from milliseconds to the desired unit
+    Return a suitable multiplier from milliseconds to the desired unit.
 
     Raises ValueError if no suitable conversion is found.
     """
-
     result = None
 
     match (unit):
@@ -82,11 +80,10 @@ def uncommon_unit_conversion(unit: str) -> int:
 
 def esoteric_unit_conversion(unit: str) -> int:
     """
-    Returns a suitable multiplier from milliseconds to the desired unit
+    Return a suitable multiplier from milliseconds to the desired unit.
 
     Raises ValueError if no suitable conversion is found.
     """
-
     result = None
 
     match (unit):
@@ -117,23 +114,24 @@ def esoteric_unit_conversion(unit: str) -> int:
         case 'jiffy' | 'jiffies':
             result = cfg.JIFFY
         case _:
-            raise ValueError("Unsupported unit")
+            msg = 'Unsupported unit'
+            raise ValueError(msg)
 
     return result
 
 
 def parse_time(time: str) -> int:
     """
-    Parses time in string format to milliseconds
+    Parse time in string format to milliseconds.
 
     NOTE: The function is case-sensitive in order to accommodate some types.
 
     Raises ValueError on invalid strings.
     """
-
     result = cfg.TIME_REGEX.search(time)
     if result is None:
-        raise ValueError(f"Parsing error; {time} is not a valid number")
+        msg = f'Parsing error; {time} is not a valid number'
+        raise ValueError(msg)
 
     value, unit = result.groups()
     multiplier = common_unit_conversion(unit)
@@ -151,8 +149,7 @@ def parse_time(time: str) -> int:
 
 
 def ms_to_string(time: int, long: bool = False) -> str:
-    """Converts miliseconds to a time string"""
-
+    """Convert miliseconds to a time string."""
     forms = ('ms', ' millisecond', ' milliseconds')
     time_unit = cfg.MILLISECOND
 
@@ -179,7 +176,7 @@ def ms_to_string(time: int, long: bool = False) -> str:
 
 
 class _ms(types.ModuleType):  # noqa: N801
-    """Implements the module interface"""
+    """Implement the module interface."""
 
     @overload
     def __call__(self: _ms, value: str, long: bool) -> int:
@@ -195,4 +192,5 @@ class _ms(types.ModuleType):  # noqa: N801
         if isinstance(value, int):
             return ms_to_string(value, long)
 
-        raise NotImplementedError("This type is not supported")
+        msg = 'This type is not supported'
+        raise NotImplementedError(msg)
