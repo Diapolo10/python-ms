@@ -1,4 +1,4 @@
-"""Contains global constants used by the package"""
+"""Contains global constants used by the package."""
 
 import random
 import re

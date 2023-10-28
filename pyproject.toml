@@ -1,60 +1,64 @@
 [build-system]
-requires = ['poetry-core>=1.2.0', 'wheel',]
-build-backend = 'poetry.core.masonry.api'
+requires = ["poetry-core>=1.2.0", "wheel",]
+build-backend = "poetry.core.masonry.api"
 
 
 [tool.coverage.run]
 branch = true
 relative_files = true
 omit = [
-    '.tox/*',
-    'tests/*',
+    ".tox/*",
+    "tests/*",
 ]
 
 
 [tool.poetry]
-name = 'python_ms'
-version = '1.1.0'
+name = "python_ms"
+version = "1.1.0"
 description = "A Python equivalent to the JavaScript ms package."
+
+packages = [
+    { include = "python_ms", from = "src" },
+]
 
 authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
 maintainers = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
 
-include = ['CHANGELOG.md', 'LICENSE',]
-license = 'MIT'
-readme = 'README.md'
+include = ["CHANGELOG.md", "LICENSE",]
+license = "MIT"
+readme = "README.md"
 
-homepage = 'https://pypi.org/project/python-ms/'
-repository = 'https://github.com/Diapolo10/python-ms'
-documentation = 'https://github.com/Diapolo10/python-ms/tree/main/docs'
+homepage = "https://pypi.org/project/python-ms/"
+repository = "https://github.com/Diapolo10/python-ms"
+documentation = "https://github.com/Diapolo10/python-ms/tree/main/docs"
 
 keywords = [
-    'package',
-    'python3',
-    'time',
+    "package",
+    "python3",
+    "time",
 ]
 classifiers = [
-    'Development Status :: 5 - Production/Stable',
-    'Intended Audience :: Developers',
-    'License :: OSI Approved :: MIT License',
-    'Natural Language :: English',
-    'Operating System :: OS Independent',
-    'Programming Language :: Python :: 3.10',
-    'Programming Language :: Python :: 3.11',
-    'Programming Language :: Python :: 3.12',
-    'Programming Language :: Python :: Implementation :: CPython',
-    'Programming Language :: Python :: Implementation :: PyPy',
-    'Topic :: Software Development :: Libraries',
-    'Typing :: Typed',
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Software Development :: Libraries",
+    "Typing :: Typed",
 ]
 
 
 [tool.poetry.dependencies]
-python = '^3.10'
+python = "^3.10"
 
 
 [tool.poetry.group.dev.dependencies]
-mypy = '^1.3.0'
+mypy = "^1.6.1"
 
 
 [tool.poetry.group.linters]
@@ -62,7 +66,7 @@ optional = true
 
 
 [tool.poetry.group.linters.dependencies]
-ruff = '>=0.0.269,<0.1.4'
+ruff = "^0.1.3"
 
 
 [tool.poetry.group.tests]
@@ -70,86 +74,15 @@ optional = true
 
 
 [tool.poetry.group.tests.dependencies]
-pytest = '^7.3.1'
-pytest-cov = '^4.1.0'
-tox = '^4.5.2'
-tox-gh-actions = '^3.1.1'
+pytest = "^7.4.3"
+pytest-cov = "^4.1.0"
+tox = "^4.11.3"
+tox-gh-actions = "^3.1.3"
 
 
 [tool.poetry.urls]
-"Tracker" = 'https://github.com/Diapolo10/python-ms/issues'
-"Changelog" = 'https://github.com/Diapolo10/python-ms/blob/main/CHANGELOG.md'
-
-
-[tool.ruff]
-select = [
-    'A',   # Builtins
-    'ANN', # Annotations
-    'ARG', # Unused arguments
-    'B',   # Bugbear
-    'BLE', # Blind except
-    'C4',  # Comprehensions
-    'C90', # mccabe
-    'COM', # Commas
-    'DTZ', # Datetimes
-    'ERA', # Commented-out code
-    'EXE', # Executable
-    'G',   # Logging format
-    'I',   # Isort
-    'ICN', # Import conventions
-    'INP', # Disallow PEP-420 (Implicit namespace packages)
-    'INT', # gettext
-    'ISC', # Implicit str concat
-    'N',   # PEP-8 Naming
-    'NPY', # Numpy
-    'PGH', # Pygrep hooks
-    'PIE', # Unnecessary code
-    'PL',  # Pylint
-    'PT',  # Pytest
-    'PTH', # Use Pathlib
-    'PYI', # Stub files
-    'RET', # Return
-    'RUF', # Ruff
-    'RSE', # Raise
-    'S',   # Bandit
-    'SIM', # Code simplification
-    'SLF', # Private member access
-    'T20', # Print
-    'TCH', # Type checking
-    'TID', # Tidy imports
-    'UP',  # Pyupgrade
-    'W',   # Warnings
-    'YTT', # sys.version
-]
-ignore = [
-    'ANN401',   # Disallow typing.Any
-    'PLR0913',  # Too many arguments
-]
-ignore-init-module-imports = true
-line-length = 120
-
-
-[tool.ruff.mccabe]
-# Unlike Flake8, default to a complexity level of 10.
-max-complexity = 10
-
-
-[tool.ruff.per-file-ignores]
-# https://beta.ruff.rs/docs/rules/
-'__init__.py' = ['F401','F403','F405',]
-'tests/*' = ['ANN201', 'ARG', 'PT011', 'S101', 'PLR2004',]
-'*/config.py' = ['S311',]
-
-
-[tool.ruff.pylint]
-max-args = 15
-max-branches = 20
-max-returns = 10
-max-statements = 80
-
-
-[tool.ruff.flake8-tidy-imports]
-ban-relative-imports = "all"
+"Tracker" = "https://github.com/Diapolo10/python-ms/issues"
+"Changelog" = "https://github.com/Diapolo10/python-ms/blob/main/CHANGELOG.md"
 
 
 [tool.pytest.ini_options]
@@ -163,15 +96,110 @@ addopts = """
 --ignore=docs/
 """
 testpaths = [
-    'tests',
+    "tests",
 ]
+
+
+[tool.ruff]
+select = [
+    "A",    # Builtins
+    "ANN",  # Annotations
+    "ARG",  # Unused arguments
+    "B",    # Bugbear
+    "BLE",  # Blind except
+    "C4",   # Comprehensions
+    "C90",  # mccabe
+    "COM",  # Commas
+    "D1",   # Undocumented public elements
+    "D2",   # Docstring conventions
+    "D3",   # Triple double quotes
+    "D4",   # Docstring text format
+    "DTZ",  # Datetimes
+    "EM",   # Error messages
+    "ERA",  # Commented-out code
+    "EXE",  # Executable
+    "F",    # Pyflakes
+    "FA",   # __future__ annotations
+    "FLY",  # F-strings
+    # "FURB", # Refurb
+    "G",    # Logging format
+    "I",    # Isort
+    "ICN",  # Import conventions
+    "INP",  # Disallow PEP-420 (Implicit namespace packages)
+    "INT",  # gettext
+    "ISC",  # Implicit str concat
+    # "LOG",  # Logging
+    "N",    # PEP-8 Naming
+    "NPY",  # Numpy
+    "PERF", # Unnecessary performance costs
+    "PGH",  # Pygrep hooks
+    "PIE",  # Unnecessary code
+    "PL",   # Pylint
+    "PT",   # Pytest
+    "PTH",  # Use Pathlib
+    "PYI",  # Stub files
+    "Q",    # Quotes
+    "RET",  # Return
+    "RUF",  # Ruff
+    "RSE",  # Raise
+    "S",    # Bandit
+    "SIM",  # Code simplification
+    "SLF",  # Private member access
+    "SLOT", # __slots__
+    "T10",  # Debugger
+    "T20",  # Print
+    "TCH",  # Type checking
+    "TID",  # Tidy imports
+    "TRY",  # Exception handling
+    "UP",   # Pyupgrade
+    "W",    # Warnings
+    "YTT",  # sys.version
+]
+ignore = [
+    "D203",    # One blank line before class docstring
+    "D212",    # Multi-line summary first line
+    "PLR0913", # Too many arguments
+    "Q000",    # Single quotes found but double quotes preferred
+]
+ignore-init-module-imports = true
+line-length = 120
+# preview = true
+show-fixes = true
+src = ["src",]
+target-version = "py310"
+
+
+[tool.ruff.flake8-quotes]
+docstring-quotes = "double"
+multiline-quotes = "double"
+
+
+[tool.ruff.mccabe]
+max-complexity = 10
+
+
+[tool.ruff.per-file-ignores]
+# https://beta.ruff.rs/docs/rules/
+"__init__.py" = ["F401","F403","F405",]
+"tests/*" = ["ANN", "ARG", "INP001", "PT011", "S101", "PLR2004",]
+"*/config.py" = ["S311",]
+
+
+[tool.ruff.pylint]
+max-args = 15
+max-branches = 20
+max-returns = 10
+max-statements = 80
+
+
+[tool.ruff.flake8-tidy-imports]
+ban-relative-imports = "all"
 
 
 [tool.tox]
 legacy_tox_ini = """
 [tox]
-envlist = py310
-isolated_build = True
+envlist = py310, py311, py312, pypy3
 
 [gh-actions]
 python =
@@ -180,19 +208,11 @@ python =
     3.12: py312
     pypy-3.10: pypy3
 
-[gh-actions:env]
-PLATFORM =
-    ubuntu-latest: linux
-    macos-latest: macos
-    windows-latest: windows
-
 [testenv]
 passenv = GITHUB_*
-deps =
-    coverage
-    coveralls[toml]
-    pytest
-    pytest-cov
+allowlist_externals = poetry
+
 commands =
-    coverage run -m pytest
+    poetry run pytest
+    poetry run coverage report
 """

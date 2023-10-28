@@ -1,4 +1,4 @@
-"""Python equivalent of the JavaScript ms package"""
+"""Python equivalent of the JavaScript ms package."""
 
 import sys
 

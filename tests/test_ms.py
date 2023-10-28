@@ -1,4 +1,4 @@
-"""Tests the ms class"""
+"""Tests the ms class."""
 
 import pytest
 
@@ -7,8 +7,7 @@ from python_ms.config import MILLISECOND
 
 
 def test_ms_string_integer_input():
-    """Tests that the ms class works correctly with text input with integers"""
-
+    """Tests that the ms class works correctly with text input with integers."""
     assert 31_557_600_000 * MILLISECOND == ms('1y')
     assert 2_592_000_000 * MILLISECOND == ms('1 mth')
     assert 604_800_000 * MILLISECOND == ms('1 wk')
@@ -25,8 +24,7 @@ def test_ms_string_integer_input():
 
 
 def test_ms_string_integer_input_uncommon():
-    """Tests that the ms class works correctly with text input with uncommon integers"""
-
+    """Tests that the ms class works correctly with text input with uncommon integers."""
     assert 31_557_600_000_000 * MILLISECOND == ms('1 millenium')
     assert 3_155_760_000_000 * MILLISECOND == ms('1 century')
     assert 631_152_000_000 * MILLISECOND == ms('2 decades')
@@ -42,8 +40,7 @@ def test_ms_string_integer_input_uncommon():
 
 
 def test_ms_string_integer_input_esoteric():
-    """Tests that the ms class works correctly with text input with esoteric integers"""
-
+    """Tests that the ms class works correctly with text input with esoteric integers."""
     assert 31_557_600_000_000_000_000 * MILLISECOND == ms('1 aeon')
     assert 31_557_600_000_000_000 * MILLISECOND == ms('1 mega-annum')
     assert 1_577_880_000_000 * MILLISECOND == ms('1 jubilee')
@@ -60,8 +57,7 @@ def test_ms_string_integer_input_esoteric():
 
 
 def test_ms_string_float_input():
-    """Tests that the ms class works correctly with text input with floats"""
-
+    """Tests that the ms class works correctly with text input with floats."""
     assert ms('2.5 hrs') == 9_000_000
     assert ms('2.2 hrs') == 7_920_000
     assert ms('.1 hrs') == 360_000
@@ -69,8 +65,7 @@ def test_ms_string_float_input():
 
 
 def test_ms_int_input():
-    """Tests that the ms class works correctly with integer input"""
-
+    """Tests that the ms class works correctly with integer input."""
     assert ms(60_000) == '1m'
     assert ms(2 * 60_000) == '2m'
     assert ms(-3 * 60_000) == '-3m'
@@ -80,8 +75,7 @@ def test_ms_int_input():
 
 
 def test_ms_int_input_long():
-    """Tests that the ms class works correctly with integer input when asking long output"""
-
+    """Tests that the ms class works correctly with integer input when asking long output."""
     assert ms(60_000, long=True) == "1 minute"
     assert ms(2 * 60_000, long=True) == "2 minutes"
     assert ms(-3 * 60000, long=True) == "-3 minutes"
@@ -93,15 +87,13 @@ def test_ms_int_input_long():
 
 
 def test_ms_unsupported_input():
-    """Tests that the ms class behaves as expected with unsupported types"""
-
+    """Tests that the ms class behaves as expected with unsupported types."""
     with pytest.raises(NotImplementedError):
         ms(...)
 
 
 def test_ms_string_invalid():
-    """Tests ms class behaviour with an invalid string"""
-
+    """Tests ms class behaviour with an invalid string."""
     with pytest.raises(ValueError):
         ms('!')
 
