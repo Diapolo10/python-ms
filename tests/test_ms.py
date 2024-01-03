@@ -8,51 +8,51 @@ from python_ms.config import MILLISECOND
 
 def test_ms_string_integer_input():
     """Tests that the ms class works correctly with text input with integers."""
-    assert 31_557_600_000 * MILLISECOND == ms('1y')
-    assert 2_592_000_000 * MILLISECOND == ms('1 mth')
-    assert 604_800_000 * MILLISECOND == ms('1 wk')
-    assert 172_800_000 * MILLISECOND == ms('2 days')
-    assert 86_400_000 * MILLISECOND == ms('1d')
-    assert 36_000_000 * MILLISECOND == ms('10h')
-    assert 7_200_000 * MILLISECOND == ms('2 hours')
-    assert 60_000 * MILLISECOND == ms('1m')
-    assert 5_000 * MILLISECOND == ms('5s')
-    assert 100 * MILLISECOND == ms('100')
-    assert -259_200_000 * MILLISECOND == ms('-3 days')
-    assert -3_600_000 * MILLISECOND == ms('-1h')
-    assert -200 * MILLISECOND == ms('-200')
+    assert ms('1y') == 31_557_600_000 * MILLISECOND
+    assert ms('1 mth') == 2_592_000_000 * MILLISECOND
+    assert ms('1 wk') == 604_800_000 * MILLISECOND
+    assert ms('2 days') == 172_800_000 * MILLISECOND
+    assert ms('1d') == 86_400_000 * MILLISECOND
+    assert ms('10h') == 36_000_000 * MILLISECOND
+    assert ms('2 hours') == 7_200_000 * MILLISECOND
+    assert ms('1m') == 60_000 * MILLISECOND
+    assert ms('5s') == 5_000 * MILLISECOND
+    assert ms('100') == 100 * MILLISECOND
+    assert ms('-3 days') == -259_200_000 * MILLISECOND
+    assert ms('-1h') == -3_600_000 * MILLISECOND
+    assert ms('-200') == -200 * MILLISECOND
 
 
 def test_ms_string_integer_input_uncommon():
     """Tests that the ms class works correctly with text input with uncommon integers."""
-    assert 31_557_600_000_000 * MILLISECOND == ms('1 millenium')
-    assert 3_155_760_000_000 * MILLISECOND == ms('1 century')
-    assert 631_152_000_000 * MILLISECOND == ms('2 decades')
-    assert 1_209_600_000 * MILLISECOND == ms('1 fortnight')
-    assert 1_000_000_000_000_000_000_000_000_000 * MILLISECOND == ms('1Ys')
-    assert 1_000_000_000_000_000_000_000_000 * MILLISECOND == ms('1Zs')
-    assert 1_000_000_000_000_000_000_000 * MILLISECOND == ms('1Es')
-    assert 1_000_000_000_000_000_000 * MILLISECOND == ms('1Ps')
-    assert 1_000_000_000_000_000 * MILLISECOND == ms('1Ts')
-    assert 1_000_000_000_000 * MILLISECOND == ms('1Gs')
-    assert 1_000_000_000 * MILLISECOND == ms('1Ms')
-    assert 1_000_000 * MILLISECOND == ms('1ks')
+    assert ms('1 millenium') == 31_557_600_000_000 * MILLISECOND
+    assert ms('1 century') == 3_155_760_000_000 * MILLISECOND
+    assert ms('2 decades') == 631_152_000_000 * MILLISECOND
+    assert ms('1 fortnight') == 1_209_600_000 * MILLISECOND
+    assert ms('1Ys') == 1_000_000_000_000_000_000_000_000_000 * MILLISECOND
+    assert ms('1Zs') == 1_000_000_000_000_000_000_000_000 * MILLISECOND
+    assert ms('1Es') == 1_000_000_000_000_000_000_000 * MILLISECOND
+    assert ms('1Ps') == 1_000_000_000_000_000_000 * MILLISECOND
+    assert ms('1Ts') == 1_000_000_000_000_000 * MILLISECOND
+    assert ms('1Gs') == 1_000_000_000_000 * MILLISECOND
+    assert ms('1Ms') == 1_000_000_000 * MILLISECOND
+    assert ms('1ks') == 1_000_000 * MILLISECOND
 
 
 def test_ms_string_integer_input_esoteric():
     """Tests that the ms class works correctly with text input with esoteric integers."""
-    assert 31_557_600_000_000_000_000 * MILLISECOND == ms('1 aeon')
-    assert 31_557_600_000_000_000 * MILLISECOND == ms('1 mega-annum')
-    assert 1_577_880_000_000 * MILLISECOND == ms('1 jubilee')
-    assert 631_152_000_000 * MILLISECOND == ms('1 score')
-    assert 473_364_000_000 * MILLISECOND == ms('1 indiction')
-    assert 252_460_800_000 * MILLISECOND == ms('2 olympiad')
-    assert 157_788_000_000 * MILLISECOND == ms('1 lustrum')
-    assert 950_400_000 * MILLISECOND == ms('1 scaramucci')
-    assert 15_552_000_000 * MILLISECOND == ms('1 friedman')
-    assert 3155700 * MILLISECOND == ms('1 microcentury')
-    assert 3155 * MILLISECOND == ms('1 nanocentury')
-    assert 86400 * MILLISECOND == ms('1 milliday')
+    assert ms('1 aeon') == 31_557_600_000_000_000_000 * MILLISECOND
+    assert ms('1 mega-annum') == 31_557_600_000_000_000 * MILLISECOND
+    assert ms('1 jubilee') == 1_577_880_000_000 * MILLISECOND
+    assert ms('1 score') == 631_152_000_000 * MILLISECOND
+    assert ms('1 indiction') == 473_364_000_000 * MILLISECOND
+    assert ms('2 olympiad') == 252_460_800_000 * MILLISECOND
+    assert ms('1 lustrum') == 157_788_000_000 * MILLISECOND
+    assert ms('1 scaramucci') == 950_400_000 * MILLISECOND
+    assert ms('1 friedman') == 15_552_000_000 * MILLISECOND
+    assert ms('1 microcentury') == 3155700 * MILLISECOND
+    assert ms('1 nanocentury') == 3155 * MILLISECOND
+    assert ms('1 milliday') == 86400 * MILLISECOND
     assert 1 * MILLISECOND <= ms('1 jiffy') <= 10 * MILLISECOND
 
 
