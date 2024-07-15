@@ -185,7 +185,7 @@ max-complexity = 15
 [tool.ruff.lint.per-file-ignores]
 # https://beta.ruff.rs/docs/rules/
 "__init__.py" = ["F401", "F403", "F405",]
-"tests/*" = ["ANN", "ARG", "INP001", "PT011", "S101", "PLR2004",]
+"tests/*" = ["ANN", "INP001", "PLR2004", "S101",]
 "*/config.py" = ["S311",]
 "ms.py" = ["FBT001", "FBT002",]
 

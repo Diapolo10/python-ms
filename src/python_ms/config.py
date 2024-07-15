@@ -1,7 +1,7 @@
 """Contains global constants used by the package."""
 
-import random
 import re
+import secrets
 
 # Basic units of time
 
@@ -34,7 +34,7 @@ MILLENIUM = 10 * CENTURY
 # Esoteric units of time
 
 # https://en.wikipedia.org/wiki/List_of_humorous_units_of_measurement#Time
-JIFFY = random.randint(1, 10) * MILLISECOND
+JIFFY = (1 + secrets.randbelow(10)) * MILLISECOND
 MILLIDAY = DAY // 1000
 MICROCENTURY = 52 * MINUTE + 35 * SECOND + 700 * MILLISECOND
 NANOCENTURY = MICROCENTURY // 1000

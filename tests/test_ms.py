@@ -94,8 +94,8 @@ def test_ms_unsupported_input():
 
 def test_ms_string_invalid():
     """Tests ms class behaviour with an invalid string."""
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="Parsing error; ! is not a valid number"):
         ms('!')
 
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="Unsupported unit"):
         ms('3 thisunitdoesntexist')
