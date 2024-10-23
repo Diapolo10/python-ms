@@ -85,6 +85,19 @@ tox-gh-actions = "^3.2.0"
 "Changelog" = "https://github.com/Diapolo10/python-ms/blob/main/CHANGELOG.md"
 
 
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+pattern  = "^(?P<base>\\d+\\.\\d+\\.\\d+)(-?((?P<stage>[a-zA-Z]+)\\.?(?P<revision>\\d+)?))?"
+format-jinja = """
+    {%- if distance == 0 -%}
+        {{- base -}}
+    {%- else -%}
+        {{- base }}.dev{{ distance }}+g{{commit}}
+    {%- endif -%}
+"""
+
+
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = """

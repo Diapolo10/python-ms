@@ -50,27 +50,38 @@ Lorem Ipsum dolor sit amet.
 <!--
 _______________________________________________________________________________
 
-## [1.1.0] - 2023-05-29
+## [1.1.1] - 2024-10-23
 
-Fixed a potential catastrophic backtracking vulnerability with a regular
-expression used to parse strings in the package.
+Switched to using dynamic versioning, and moved `py.typed` to the right place.
+Also removed certain unnecessary files.
 
 ### Changed
 
 - Updated dependencies
-- Replaced Pylint and Flake8 with Ruff
+- Switched project to use dynamic versioning
 
 ### Fixed
 
-- Fixed miscellaneous linting issues
-
-### Security
-
-- A regular expression used to parse strings was found to have a potential
-  catastrophic backtracking vulnerability; this was fixed by replacing the
-  regex with a non-vulnerable variant
+- Moved `py.typed` so `mypy` actually finds it
 
 -->
+
+_______________________________________________________________________________
+
+## [1.1.1] - 2024-10-23
+
+Switched to using dynamic versioning, and moved `py.typed` to the right place.
+Also removed certain unnecessary files.
+
+### Changed
+
+- Updated dependencies
+- Switched project to use dynamic versioning
+- Updated `README.md` and removed references to `pylint` and `flake8`
+
+### Fixed
+
+- Moved `py.typed` so `mypy` actually finds it
 
 _______________________________________________________________________________
 
