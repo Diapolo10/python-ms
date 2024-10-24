@@ -19,7 +19,6 @@ exclude_lines = [
 ]
 
 
-
 [tool.poetry]
 name = "python_ms"
 version = "1.1.1"
