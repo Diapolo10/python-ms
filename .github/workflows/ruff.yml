@@ -39,6 +39,7 @@ jobs:
     - name: Lint with Ruff
       id: lint
       run: |
+        +e
         poetry run ruff check --fix .
         echo "RUFF_SUCCESS=$([ $? -eq 0 ])" >> $GITHUB_OUTPUT
 
