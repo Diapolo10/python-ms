@@ -1,44 +1,16 @@
 [build-system]
-requires = ["poetry-core>=1.2.0", "wheel",]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling", "uv-dynamic-versioning>=0.7.0"]
+build-backend = "hatchling.build"
 
-
-[tool.coverage.run]
-branch = true
-relative_files = true
-omit = [
-    ".tox/*",
-    "tests/*",
-]
-
-
-[tool.coverage.report]
-exclude_lines = [
-    "pragma: not covered",
-    "@overload",
-]
-
-
-[tool.poetry]
+[project]
 name = "python_ms"
-version = "1.1.1"
+dynamic = ["version"]
 description = "A Python equivalent to the JavaScript ms package."
-
-packages = [
-    { include = "python_ms", from = "src" },
-]
-
-authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
-maintainers = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
-
-include = []
-license = "MIT"
+authors = [{ name = "Lari Liuhamo", email = "lari.liuhamo+pypi@gmail.com" }]
+requires-python = ">=3.11"
 readme = "README.md"
-
-homepage = "https://pypi.org/project/python-ms/"
-repository = "https://github.com/Diapolo10/python-ms"
-documentation = "https://github.com/Diapolo10/python-ms/tree/main/docs"
-
+license = "MIT"
+maintainers = [{ name = "Lari Liuhamo", email = "lari.liuhamo+pypi@gmail.com" }]
 keywords = [
     "package",
     "python3",
@@ -50,60 +22,59 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
     "Topic :: Software Development :: Libraries",
     "Typing :: Typed",
 ]
 
+[project.urls]
+Homepage = "https://pypi.org/project/python-ms/"
+Repository = "https://github.com/Diapolo10/python-ms"
+Documentation = "https://github.com/Diapolo10/python-ms/tree/main/docs"
+Tracker = "https://github.com/Diapolo10/python-ms/issues"
+Changelog = "https://github.com/Diapolo10/python-ms/blob/main/CHANGELOG.md"
 
-[tool.poetry.dependencies]
-python = "^3.10"
+[dependency-groups]
+dev = [
+    "hatch>=1.16.5",
+    "mypy>=2.1.0",
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.12",
+    "tox>=4.54.0",
+    "tox-gh-actions>=3.5.0",
+]
 
+[tool.coverage.run]
+branch = true
+relative_files = true
+omit = [
+    ".tox/*",
+    "tests/*",
+]
 
-[tool.poetry.group.dev.dependencies]
-mypy = ">=1.12,<3.0"
+[tool.coverage.report]
+exclude_also = [
+    "pragma: not covered",
+    "@overload",
+]
 
+[tool.hatch.build.targets.sdist]
+include = ["src/python_ms"]
 
-[tool.poetry.group.linters]
-optional = true
+[tool.hatch.build.targets.wheel]
+include = ["src/python_ms"]
 
+[tool.hatch.build.targets.wheel.sources]
+"src/python_ms" = "python_ms"
 
-[tool.poetry.group.linters.dependencies]
-ruff = ">=0.8.1,<0.16.0"
-
-
-[tool.poetry.group.tests]
-optional = true
-
-
-[tool.poetry.group.tests.dependencies]
-pytest = ">=8.3.4,<10.0.0"
-pytest-cov = ">=6,<8"
-tox = "^4.12.1"
-tox-gh-actions = "^3.2.0"
-
-
-[tool.poetry.urls]
-"Tracker" = "https://github.com/Diapolo10/python-ms/issues"
-"Changelog" = "https://github.com/Diapolo10/python-ms/blob/main/CHANGELOG.md"
-
-
-[tool.poetry-dynamic-versioning]
-enable = true
-vcs = "git"
-pattern  = "^(?P<base>\\d+\\.\\d+\\.\\d+)(-?((?P<stage>[a-zA-Z]+)\\.?(?P<revision>\\d+)?))?"
-format-jinja = """
-    {%- if distance == 0 -%}
-        {{- base -}}
-    {%- else -%}
-        {{- base }}.dev{{ distance }}+g{{commit}}
-    {%- endif -%}
-"""
-
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
@@ -119,95 +90,32 @@ testpaths = [
     "tests",
 ]
 
-
 [tool.ruff]
-lint.select = [
-    "A",     # Builtins
-    "ANN",   # Annotations
-    "ARG",   # Unused arguments
-    "ASYNC", # Asynchronous code
-    "B",     # Bugbear
-    "BLE",   # Blind except
-    "C4",    # Comprehensions
-    "C90",   # mccabe
-    "COM",   # Commas
-    "D1",    # Undocumented public elements
-    "D2",    # Docstring conventions
-    "D3",    # Triple double quotes
-    "D4",    # Docstring text format
-    "DTZ",   # Datetimes
-    "E",     # Errors
-    "EM",    # Error messages
-    "ERA",   # Commented-out code
-    "EXE",   # Executable
-    "F",     # Pyflakes
-    "FA",    # __future__ annotations
-    "FBT",   # "Boolean trap"
-    "FIX",   # "FIXME"-comments
-    "FLY",   # F-strings
-    # "FURB",  # Refurb
-    "G",     # Logging format
-    "I",     # Isort
-    "ICN",   # Import conventions
-    "INP",   # Disallow PEP-420 (Implicit namespace packages)
-    "INT",   # gettext
-    "ISC",   # Implicit str concat
-    "LOG",   # Logging
-    "N",     # PEP-8 Naming
-    "PERF",  # Unnecessary performance costs
-    "PGH",   # Pygrep hooks
-    "PIE",   # Unnecessary code
-    "PL",    # Pylint
-    "PT",    # Pytest
-    "PTH",   # Use Pathlib
-    "PYI",   # Stub files
-    "Q",     # Quotes
-    "RET",   # Return
-    "RUF",   # Ruff
-    "RSE",   # Raise
-    "S",     # Bandit
-    "SIM",   # Code simplification
-    "SLF",   # Private member access
-    "SLOT",  # __slots__
-    "T10",   # Debugger
-    "T20",   # Print
-    "TC",   # Type checking
-    "TD",    # "TODO"-comments
-    "TID",   # Tidy imports
-    "TRY",   # Exception handling
-    "UP",    # Pyupgrade
-    "W",     # Warnings
-    "YTT",   # sys.version
-]
+lint.select = ["ALL"]
 lint.ignore = [
+    "COM812",  # Missing trailing comma (disabled due to formatter conflict)
     "D203",    # One blank line before class docstring
     "D212",    # Multi-line summary first line
+    "ISC001",  # Single-line implicit string concatenation (disabled due to formatter conflict)
     "PLR0913", # Too many arguments
     "Q000",    # Single quotes found but double quotes preferred
 ]
 line-length = 120
-# preview = true
 show-fixes = true
-src = ["src",]
-target-version = "py310"
-
 
 [tool.ruff.lint.flake8-quotes]
 docstring-quotes = "double"
 multiline-quotes = "double"
 
-
 [tool.ruff.lint.mccabe]
 max-complexity = 15
 
-
 [tool.ruff.lint.per-file-ignores]
 # https://beta.ruff.rs/docs/rules/
-"__init__.py" = ["F401", "F403", "F405",]
-"tests/*" = ["ANN", "INP001", "PLR2004", "S101",]
+"__init__.py" = ["F401", "F403", "F405", "PGH003",]
+"tests/*" = ["ANN", "ARG", "INP001", "PLR2004", "S101",]
 "*/config.py" = ["S311",]
 "ms.py" = ["FBT001", "FBT002",]
-
 
 [tool.ruff.lint.pylint]
 max-args = 15
@@ -215,28 +123,42 @@ max-branches = 20
 max-returns = 15
 max-statements = 80
 
-
 [tool.ruff.lint.flake8-tidy-imports]
 ban-relative-imports = "all"
-
 
 [tool.tox]
 legacy_tox_ini = """
 [tox]
-envlist = py310, py311, py312, pypy3
+envlist = py3{11, 12, 13, 14}, pypy3
+skip_missing_interpreters = true
 
 [gh-actions]
 python =
-    3.10: py310
     3.11: py311
     3.12: py312
-    pypy-3.10: pypy3
+    3.13: py313
+    3.14: py314
+    pypy-3.11: pypy3
 
 [testenv]
-passenv = GITHUB_*
-allowlist_externals = poetry
+pass_env =
+    GITHUB_*
+    FORCE_COLOR
+allowlist_externals = uv
 
 commands =
-    poetry run pytest
-    poetry run coverage report
+    uv run --active --frozen pytest
+    uv run --active --frozen coverage report
 """
+
+[tool.uv]
+cache-keys = [
+    { file = "pyproject.toml" },
+    { git = { commit = true, tags = true }},
+]
+
+[tool.uv-dynamic-versioning]
+bump = true
+fallback-version = "0.0.0"
+style = "pep440"
+vcs = "git"
