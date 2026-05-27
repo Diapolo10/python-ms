@@ -11,11 +11,7 @@ requires-python = ">=3.11"
 readme = "README.md"
 license = "MIT"
 maintainers = [{ name = "Lari Liuhamo", email = "lari.liuhamo+pypi@gmail.com" }]
-keywords = [
-    "package",
-    "python3",
-    "time",
-]
+keywords = ["package", "python3", "time"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -53,10 +49,7 @@ dev = [
 [tool.coverage.run]
 branch = true
 relative_files = true
-omit = [
-    ".tox/*",
-    "tests/*",
-]
+omit = [".tox/*", "tests/*"]
 
 [tool.coverage.report]
 exclude_also = [
@@ -96,11 +89,9 @@ addopts = [
     "--cov-report=html:tests/reports/coverage-html",
     "--cov-report=term-missing:skip-covered",
     "--cov-report=xml:tests/reports/coverage.xml",
-    "--ignore=docs/"
+    "--ignore=docs/",
 ]
-testpaths = [
-    "tests",
-]
+testpaths = ["tests"]
 
 [tool.ruff]
 lint.select = ["ALL"]
@@ -124,10 +115,10 @@ max-complexity = 15
 
 [tool.ruff.lint.per-file-ignores]
 # https://beta.ruff.rs/docs/rules/
-"__init__.py" = ["F401", "F403", "F405", "PGH003",]
-"tests/*" = ["ANN", "ARG", "INP001", "PLR2004", "S101",]
-"*/config.py" = ["S311",]
-"ms.py" = ["FBT001", "FBT002",]
+"__init__.py" = ["F401", "F403", "F405", "PGH003"]
+"tests/*" = ["ANN", "ARG", "INP001", "PLR2004", "S101"]
+"*/config.py" = ["S311"]
+"ms.py" = ["FBT001", "FBT002"]
 
 [tool.ruff.lint.pylint]
 max-args = 15
@@ -166,8 +157,9 @@ commands =
 [tool.uv]
 cache-keys = [
     { file = "pyproject.toml" },
-    { git = { commit = true, tags = true }},
+    { git = { commit = true, tags = true } },
 ]
+constraint-dependencies = ["pygments>=2.20.0"]
 
 [tool.uv-dynamic-versioning]
 bump = true
