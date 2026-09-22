@@ -95,7 +95,6 @@ jobs:
       run: uv build
 
     - name: Publish test release 📦 to Test PyPI
-      continue-on-error: true
       run: uv publish
       env:
         UV_PUBLISH_URL: https://test.pypi.org/legacy/
