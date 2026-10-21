@@ -50,21 +50,30 @@ Lorem Ipsum dolor sit amet.
 <!--
 _______________________________________________________________________________
 
-## [1.1.1] - 2024-10-23
+## [1.1.2] - 2026-10-21
 
-Switched to using dynamic versioning, and moved `py.typed` to the right place.
-Also removed certain unnecessary files.
+Maintenance update for updating development dependencies. There are no
+user-facing changes in this release, but it'll be the last 1.x release
+as there are plans to change the API to act more like regular Python
+packages.
 
 ### Changed
 
 - Updated dependencies
-- Switched project to use dynamic versioning
-
-### Fixed
-
-- Moved `py.typed` so `mypy` actually finds it
 
 -->
+_______________________________________________________________________________
+
+## [1.1.2] - 2026-10-21
+
+Maintenance update for updating development dependencies. There are no
+user-facing changes in this release, but it'll be the last 1.x release
+as there are plans to change the API to act more like regular Python
+packages.
+
+### Changed
+
+- Updated dependencies
 
 _______________________________________________________________________________
 
