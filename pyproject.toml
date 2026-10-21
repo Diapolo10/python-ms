@@ -167,4 +167,3 @@ bump = true
 fallback-version = "0.0.0"
 style = "pep440"
 vcs = "git"
-format = "{base}.post{distance}"
