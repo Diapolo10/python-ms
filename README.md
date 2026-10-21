@@ -23,7 +23,7 @@ everything.
 The project is available via PyPI:
 
 ```sh
-pip install python_ms
+pip install python-ms
 ```
 
 ## Examples
@@ -31,7 +31,7 @@ pip install python_ms
 ### Convert from strings
 
 ```python
-import python_ms as ms
+from ms import ms
 
 ms('2 days')  # 172_800_000
 ms('1d')      # 86_400_000
@@ -50,7 +50,7 @@ ms('-200')    # -200
 ### Convert from milliseconds
 
 ```python
-import python_ms as ms
+from ms import ms
 
 ms(60_000)          # "1m"
 ms(2 * 60_000)      # "2m"
@@ -61,7 +61,7 @@ ms(ms('10 hours'))  # "10h"
 ### Time format written out
 
 ```python
-import python_ms as ms
+from ms import ms
 
 ms(60_000, long=True)          # "1 minute"
 ms(2 * 60_000, long=True)      # "2 minutes"
@@ -72,7 +72,7 @@ ms(ms('10 hours'), long=True)  # "10 hours"
 ## Features
 
 - Has no dependencies aside from the standard library
-- If a number is supplied to `python_ms`, a string with a unit is returned
+- If a number is supplied to `python-ms`, a string with a unit is returned
 - If a string that contains the number is supplied, it returns it as a number (e.g.: it returns `100` for `'100'`)
 - If you pass a string with a number and a valid unit, the number of equivalent milliseconds is returned
 
@@ -83,7 +83,7 @@ ms(ms('10 hours'), long=True)  # "10 hours"
 ## Caught a Bug?
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
-2. Install `poetry` (if it isn't already installed)
-3. Run `poetry install` in the project directory. This fetches development dependencies like `pytest` and sets up everything for you to start debugging
+2. Install `uv` (if it isn't already installed)
+3. Run `uv sync` in the project directory. This fetches development dependencies like `pytest` and sets up everything for you to start debugging
 
-As always, you can run the tests using: `poetry run pytest`
+As always, you can run the tests using: `uv run pytest`

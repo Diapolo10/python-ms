@@ -51,4 +51,8 @@ AEON = 10**3 * MEGAANNUM
 
 # Regular expressions
 
-TIME_REGEX = re.compile(r'^([+-]?\d+(?:\.\d*)?|\.\d+)\s?([a-zA-Z-]*)$')
+WHITESPACE_PATTERN = r"\s*?"
+VALUE_PATTERN = r"(?P<value>[+-]?\d+(?:\.\d*)?|\.\d+)"
+UNIT_PATTERN = r"(?P<unit>[a-zA-Z-]*)"
+TIME_PATTERN = WHITESPACE_PATTERN.join(["", VALUE_PATTERN, UNIT_PATTERN, ""])
+TIME_REGEX = re.compile(f"^{TIME_PATTERN}$")

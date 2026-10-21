@@ -1,5 +1,5 @@
 [project]
-name = "python_ms"
+name = "python-ms"
 description = "A Python equivalent to the JavaScript ms package."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -17,6 +17,7 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
   "Topic :: Software Development :: Libraries",
@@ -59,16 +60,19 @@ exclude_also = [
 ]
 
 [tool.hatch.build.targets.sdist]
-include = ["src/python_ms"]
+include = ["src/ms"]
 
 [tool.hatch.build.targets.wheel]
-include = ["src/python_ms"]
+include = ["src/ms"]
 
 [tool.hatch.build.targets.wheel.sources]
-"src/python_ms" = "python_ms"
+"src/ms" = "ms"
 
 [tool.hatch.version]
 source = "uv-dynamic-versioning"
+
+[tool.hatch.sources]
+ms = { path = "src/ms" }
 
 [tool.mypy]
 exclude = ["tests/"]
