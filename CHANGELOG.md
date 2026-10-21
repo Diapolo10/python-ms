@@ -64,7 +64,7 @@ packages.
 -->
 _______________________________________________________________________________
 
-## [1.1.2] - 2026-10-21
+## [1.1.3] - 2026-10-21
 
 Maintenance update for updating development dependencies. There are no
 user-facing changes in this release, but it'll be the last 1.x release
