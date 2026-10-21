@@ -33,4 +33,4 @@ jobs:
       env:
         UV_PUBLISH_URL: https://upload.pypi.org/legacy/
         UV_PUBLISH_CHECK_URL: https://pypi.org/simple/
-        UV_PUBLISH_TOKEN: ${{ secrets.TEST_PYPI_PASSWORD }}
+        UV_PUBLISH_TOKEN: ${{ secrets.PYPI_PASSWORD }}
